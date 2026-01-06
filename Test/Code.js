@@ -42,3 +42,38 @@ function sendNotification(recipient, subject, body) {
         return false;
     }
 }
+
+/**
+ * Generates a random number
+ * @returns {number} A random number between 0 and 1
+ */
+function getRandomNumber() {
+    return Math.random();
+}
+
+/**
+ * Generates a random integer between a given range (inclusive)
+ * @param {number} min - The minimum value
+ * @param {number} max - The maximum value
+ * @returns {number} A random integer
+ */
+function getRandomInteger(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * Generates a random string of a given length
+ * @param {number} length - The length of the random string
+ * @returns {string} A random string
+ */
+function getRandomString(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
