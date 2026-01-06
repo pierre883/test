@@ -59,7 +59,7 @@ function readFromSheet(sheetName) {
 function sendNotification(recipient, subject, body) {
     try {
         GmailApp.sendEmail(recipient, subject, body);
-        Logger.log('Email sent to: ' + recipient);
+        Logger.log('Email sent2 to: ' + recipient);
         return true;
     } catch (error) {
         Logger.log('Error sending email: ' + error.message);
