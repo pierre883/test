@@ -70,10 +70,19 @@ function getRandomInteger(min, max) {
  */
 function getRandomString(length) {
     var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234TUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
     for (var i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     return result;
+}
+
+/**
+ * Gets a random element from an array
+ * @param {Array} arr - The array to pick from
+ * @returns {*} A random element from the array
+ */
+function getRandomElementFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }
