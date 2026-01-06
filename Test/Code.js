@@ -25,3 +25,20 @@ function writeToSheet(sheetName, data) {
         return false;
     }
 }
+
+/**
+ * Sends an email notification
+ * @param {string} recipient - Email address to send to
+ * @param {string} subject - Email subject
+ * @param {string} body - Email body content
+ */
+function sendNotification(recipient, subject, body) {
+    try {
+        GmailApp.sendEmail(recipient, subject, body);
+        Logger.log('Email sent to: ' + recipient);
+        return true;
+    } catch (error) {
+        Logger.log('Error sending email: ' + error.message);
+        return false;
+    }
+}
